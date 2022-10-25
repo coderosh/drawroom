@@ -4,36 +4,50 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DrawRoom</title>
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/index.css" />
   </head>
   <body>
-    <div class="centered">
-      <div class="box">
-        <div class="box-title">DrawRoom</div>
-        <form action="/draw.html">
-          <div class="form-group">
-            <label for="room">Room</label>
-            <input
-              type="text"
-              name="room"
-              id="room"
-              autocomplete="off"
-              required
-            />
+        
+  <body>
+    <div class="login-page">
+      <div class="form">
+        <div class="login">
+          <div class="login-header">
+            <h1>Drawroom</h1>
+            <p>Please enter username and room id</p>
           </div>
-          <div class="form-group">
-            <label for="username">Username</label>
+        </div> <form action="/draw.html">
+        <form action="/draw.html" class="login-form">
+          <div class="form-group form-field">
+            <label for="username"></label>
             <input
               type="text"
               name="username"
               id="username"
               autocomplete="off"
+              placeholder="Username"
+              required
+            />
+          </div>  
+          <div class="form-group form-field">
+            <label for="room"></label>
+            <input
+              type="text"
+              name="room"
+              id="room"
+              autocomplete="off"
+              placeholder="Room"
               required
             />
           </div>
-          <button>Join</button>
+          <div class="form-field">
+            <button class="btn" type="submit">Join</button>
+          </div>
         </form>
       </div>
     </div>
+
+</body>
+</html>
   </body>
 </html>

@@ -4,31 +4,55 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DrawRoom</title>
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/draw.css" />
   </head>
   <body>
+    <span style="z-index: 10; position: absolute; top: 0;">
+      <button class="btn" onclick="sidebarOpen()">☰</button>
+    </span>
+
+    <canvas></canvas>
+
     <div id="settings">
-      <div class="setting">
+      <div class="setting"> 
         <input type="color" id="color" />
       </div>
       <div class="setting">
         <input type="number" id="width" value="10" />
       </div>
-      <div class="setting">
+      <div class="setting reset-btn">
         <input type="button" id="clear" value="Clear" />
       </div>
     </div>
-    <div id="roomData">
-      <div class="room-name">Javsascript</div>
-      <div class="room-users">
-        <ul class="users"></ul>
+    
+    <!-- Sidebar -->
+    <div class="sidebar" style="left: 0px" id="mySidebar">
+      <button onclick="sidebarClose()" class="btn">Close &times;</button>
+      <div id="roomData">
+        <div class="room-name">DrawRoom</div>
+        <br />
+        <div class="room-users">
+          <h3 style="color:#111;">Users in Room</h3> <br/>
+          <ul class="users"></ul>
+        </div>
       </div>
     </div>
-    <canvas></canvas>
 
     <script src="/socket.io/socket.io.js"></script>
     <script src="/js/push.min.js"></script>
     <script src="/js/qs.min.js"></script>
     <script src="/js/draw.js"></script>
+
+    <script>
+      function sidebarOpen() {
+        // document.getElementById("mySidebar").style.display = "block";
+        document.getElementById("mySidebar").style.left = "0px";
+      }
+      
+      function sidebarClose() {
+        // document.getElementById("mySidebar").style.display = "none";
+        document.getElementById("mySidebar").style.left = "-300px";
+      }
+      </script>
   </body>
 </html>
