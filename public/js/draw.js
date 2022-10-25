@@ -23,6 +23,8 @@ canvasSize()
 function canvasSize() {
   canvas.height = window.innerHeight
   canvas.width = window.innerWidth
+  canvas.style.position="absolute"
+  canvas.style.top=0
 }
 
 socket.on('draw', function (data) {
@@ -30,10 +32,10 @@ socket.on('draw', function (data) {
 })
 
 socket.on('roomData', ({ room, users }) => {
-  document.querySelector('.room-name').textContent = room
+  document.querySelector('.room-name').innerHTML = `Room Id <br/> ${room}`
   let html = ''
   users.forEach((user) => {
-    html += `<li>${user.username}</li>`
+    html += `<li>User: ${user.username}</li>`
   })
   document.querySelector('.users').innerHTML = html
 })

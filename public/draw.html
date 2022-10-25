@@ -4,31 +4,55 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DrawRoom</title>
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/draw.css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   </head>
   <body>
+    <span style="z-index: 10;">
+      <button class="w3-button w3-dark" onclick="w3_open()">☰</button>
+    </span>
+    <canvas></canvas>
+
+    
+    
     <div id="settings">
-      <div class="setting">
+      <div class="setting">Tools: 
         <input type="color" id="color" />
       </div>
       <div class="setting">
         <input type="number" id="width" value="10" />
       </div>
-      <div class="setting">
+      <div class="setting reset-btn">
         <input type="button" id="clear" value="Clear" />
       </div>
     </div>
-    <div id="roomData">
-      <div class="room-name">Javsascript</div>
-      <div class="room-users">
-        <ul class="users"></ul>
+    
+    <!-- Sidebar -->
+    
+    <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none;top:0;" id="mySidebar">
+      <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
+      <div id="roomData">
+        <div class="room-name">DrawRoom</div>
+        <div class="room-users">
+          <span style="color:#111;font-weight: bold;">Currently in room</span> <br/>
+          <ul class="users"></ul>
+        </div>
       </div>
     </div>
-    <canvas></canvas>
 
     <script src="/socket.io/socket.io.js"></script>
     <script src="/js/push.min.js"></script>
     <script src="/js/qs.min.js"></script>
     <script src="/js/draw.js"></script>
+
+    <script>
+      function w3_open() {
+        document.getElementById("mySidebar").style.display = "block";
+      }
+      
+      function w3_close() {
+        document.getElementById("mySidebar").style.display = "none";
+      }
+      </script>
   </body>
 </html>
