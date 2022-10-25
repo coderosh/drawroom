@@ -14,11 +14,12 @@ body {
 #settings {
   position: absolute;
   bottom: 0;
-  padding: 10px;
+  padding: 20px;
   background-color: burlywood;
   width: 100%;
   display: flex;
   align-items: center;
+  z-index: 30;
 }
 
 .setting {
@@ -45,15 +46,39 @@ body {
 }
 
 
+.sidebar {
+  height: 100%;
+  padding: 20px;
+  border-right: 1px solid #ccc;
+  width: 200px;
+  background: white;
+  position:fixed!important;
+  z-index:20;
+  overflow:auto;
+  transition: left 300ms;
+}
+
+.btn {
+  background: #ccc;
+  padding: 10px 15px;
+  width: 100%;
+  font-size: 18px;
+  border: 1px solid #cfcfcf;
+}
+
+.btn:hover {
+  background: #b3b3b3;
+}
+
 
 #roomData {
-  position: absolute;
   background: rgb(255, 255, 255);
   user-select: none;
   pointer-events: none;
   color: #f4f4f4;
-  padding: 10px;
   font-size: 15px;
+  width: 100%;
+  margin-top: 20px;
 }
 
 .users {
@@ -68,6 +93,7 @@ body {
   padding: 5px 10px;
   color:#111;
   margin-bottom: 10px;
+  display: block;
 }
 
 .reset-btn{

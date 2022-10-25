@@ -23,8 +23,8 @@ canvasSize()
 function canvasSize() {
   canvas.height = window.innerHeight
   canvas.width = window.innerWidth
-  canvas.style.position="absolute"
-  canvas.style.top=0
+  canvas.style.position = 'absolute'
+  canvas.style.top = 0
 }
 
 socket.on('draw', function (data) {
