@@ -35,7 +35,7 @@ socket.on('roomData', ({ room, users }) => {
   document.querySelector('.room-name').innerHTML = `Room Id <br/> ${room}`
   let html = ''
   users.forEach((user) => {
-    html += `<li>User: ${user.username}</li>`
+    html += `<li>${user.username}</li>`
   })
   document.querySelector('.users').innerHTML = html
 })
