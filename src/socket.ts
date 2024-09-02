@@ -1,10 +1,10 @@
-import socketio, { Server } from 'socket.io'
+import { Server } from 'socket.io'
 import { addUser, removeUser, getUser, getUsersInRoom } from './users'
 
 let io: Server
 
 const init = (server: any) => {
-  io = socketio(server)
+  io = new Server(server)
 
   io.on('connection', (socket) => {
     socket.on('join', (options, callback) => {
